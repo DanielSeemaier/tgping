@@ -81,7 +81,6 @@ double collect_statistics(const int ipv, const std::string &host,
     const auto output = do_ping(ipv, host);
     const auto ans = parse_ping_output(output);
 
-    std::cout << output << "----> " << ans << std::endl;
     if (ans == -2) {
       std::cout << "Could not parse ping output:\n";
       std::cout << "--------------------\n";
