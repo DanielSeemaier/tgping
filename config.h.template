@@ -1,0 +1,7 @@
+#pragma once 
+
+#define AUTH_KEY ""
+#define CHAT_ID ""
+#define HOST "google.de"
+#define DURATION 8
+#define INTERVAL 5
