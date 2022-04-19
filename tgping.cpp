@@ -2,13 +2,13 @@
 #include <chrono>
 #include <cstdio>
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <thread>
-#include <iomanip>
 
-#include "telegram.h"
 #include "config.h"
+#include "telegram.h"
 
 using namespace tgping;
 
@@ -109,7 +109,8 @@ int main() {
   while (true) {
     const auto ans = collect_statistics(4, HOST, INTERVAL, DURATION * 60);
     std::stringstream message;
-    message << "Dropped " << std::setprecision(2) << 100.0 * ans << "% during the last hour";
+    message << "Dropped " << std::setprecision(2) << 100.0 * ans
+            << "% during the last " << DURATION << " hours";
     client.send_message(CHAT_ID, message.str());
   }
 
